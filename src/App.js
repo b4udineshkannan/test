@@ -1,23 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
 
+import { useState } from 'react';
+import Depatment1 from './Deparment1';
+import Child1 from './Child1';
+
 function App() {
+  
+ const [parentsend, setParentsend] = useState("");
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Depatment1 send={(a)=>{setParentsend(a)}}/>
+      {/* <Child1 recievedepart={parentsend}/>
+       */}
+       {/* <h2>{parentsend}</h2> */}
+       <Child1 receive={parentsend}/>
+       
+     
+     
+    
     </div>
   );
 }
